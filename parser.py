@@ -10,6 +10,7 @@ fo.write("remote_host,request_method,request_url,status,time_received\n")
 
 for line in fs:
 	 json = line_parser(line)
-	 res = json['remote_host'] + "," + json['request_method'] + "," + json['request_url'] + "," + json['status'] + "," + json['time_received'] + "\n"
+	 time = json['time_received_utc_isoformat'].split('T')[0].split('-')[2]
+	 res = json['remote_host'] + "," + json['request_method'] + "," + json['request_url'] + "," + json['status'] + "," + time + "\n"
 	 fo.write(res)
 
