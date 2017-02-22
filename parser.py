@@ -6,7 +6,7 @@ fs = open("files/NASA_access_log_Aug95")
 fo = open("results.txt","w" )
 
 res = ""
-fo.write("remote_host,request_method,request_url,status,time_received\n")
+fo.write("remote_host\trequest_method\trequest_url\tstatus\ttime_received\n")
 
 for line in fs:
 	 json = line_parser(line)
